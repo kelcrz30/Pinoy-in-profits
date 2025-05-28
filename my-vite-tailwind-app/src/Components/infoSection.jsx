@@ -7,7 +7,7 @@ function InfoSection() {
       <div className='max-w-7xl mx-auto'>
         <div className='grid lg:grid-cols-2 gap-16 items-center'>
           <div className='relative'>
-            <img src="/info.JPG" alt="" className="rounded-2xl shadow-lg w-full"/>
+            <img src="/Pinoy-in-profits/info.JPG" alt="" className="rounded-2xl shadow-lg w-full"/>
               <div className="absolute -bottom-6 -right-6 bg-gray-900 text-white p-4 rounded-xl shadow-lg">
                 <div className="text-center">
                   <div className="text-2xl font-bold">38</div>

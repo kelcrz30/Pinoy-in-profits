@@ -9,7 +9,7 @@ function CoachSection() {
                 <div className="grid md:grid-cols-3 gap-8">
                     <div className="bg-white rounded-2xl p-8 border border-gray-200 text-center hover:shadow-2xl hover:-translate-y-2 hover:border-blue-300 transition-all duration-300 group cursor-pointer">
                         <div className="relative mb-6">
-                            <img src="./hero1.JPG" alt="Coach Lemuel"
+                            <img src="/Pinoy-in-profits/hero1.JPG" alt="Coach Lemuel"
                                 className="w-35 h-35 rounded-full mx-auto object-cover border-4 border-blue-950 group-hover:border-blue-600 group-hover:scale-105 transition-all duration-300"
                             />
                             <div className="mt-2">
@@ -24,7 +24,7 @@ function CoachSection() {
 
                     <div className="bg-white rounded-2xl p-8 border border-gray-200 text-center hover:shadow-2xl hover:-translate-y-2 hover:border-green-300 transition-all duration-300 group cursor-pointer">
                         <div className="relative mb-6">
-                            <img src="./hero2.JPG" alt="Coach Janeth"
+                            <img src="/Pinoy-in-profits/hero2.JPG" alt="Coach Janeth"
                                 className="w-35 h-35 rounded-full mx-auto object-cover border-4 border-blue-950 group-hover:border-green-600 group-hover:scale-105 transition-all duration-300"
                             />
                             <div className="mt-2">
@@ -39,7 +39,7 @@ function CoachSection() {
 
                     <div className="bg-white rounded-2xl p-8 border border-gray-200 text-center hover:shadow-2xl hover:-translate-y-2 hover:border-purple-300 transition-all duration-300 group cursor-pointer">
                         <div className="relative mb-6">
-                            <img src="./hero3.JPG" alt="Coach Retchel"
+                            <img src="/Pinoy-in-profits/hero3.JPG" alt="Coach Retchel"
                                 className="w-35 h-35 rounded-full mx-auto object-cover border-4 border-blue-950 group-hover:border-purple-600 group-hover:scale-105 transition-all duration-300"
                             />
                             <div className="mt-2">

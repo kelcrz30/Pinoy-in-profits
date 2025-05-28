@@ -1,4 +1,4 @@
-import CoachSection from "./Components/CoachSection";
+import CoachSection from "./Components/coachSection";
 import Hero from "./Components/hero";
 import InfoSection from "./Components/infoSection";
 import Testimonial from "./Components/testimonial";
