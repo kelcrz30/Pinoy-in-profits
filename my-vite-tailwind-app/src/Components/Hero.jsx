@@ -1,3 +1,4 @@
+import '../index.css'; // Or './main.css'
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Play, Users, TrendingUp, Award, Star, CheckCircle, ArrowRight, Quote, X, Menu, Shield, Trophy, Target } from "lucide-react";
@@ -166,7 +167,6 @@ function Hero() {
         </div>
       </section>
 
-      {/* Video Section - Simple Auto-play */}
       <section className="px-4 sm:px-6 py-6 sm:py-8 bg-blue-950 border-t border-gray-200">
         <div
           onClick={() => setShowModal(true)}

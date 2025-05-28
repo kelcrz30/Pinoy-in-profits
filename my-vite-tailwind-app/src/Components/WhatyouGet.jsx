@@ -1,3 +1,4 @@
+import '../index.css'; // Or './main.css'
 import { Users, TrendingUp, Award, ArrowRight } from 'lucide-react';
 import { FadeInSection } from "../Animation/FadeInSection";
 

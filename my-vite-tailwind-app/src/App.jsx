@@ -1,7 +1,9 @@
 import CoachSection from "./Components/coachSection";
 import Hero from "./Components/hero";
 import InfoSection from "./Components/infoSection";
-import Testimonial from "./Components/testimonial";
+import TestimonialSection from "./Components/TestimonialCard";
+
+
 import WhatyouGet from "./Components/WhatyouGet";
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
     <WhatyouGet/>
     <InfoSection/>
     <CoachSection/>
-    <Testimonial/>
+    <TestimonialSection/>
     </>
   );
 }

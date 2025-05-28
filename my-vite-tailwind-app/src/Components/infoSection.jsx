@@ -1,3 +1,4 @@
+import '../index.css'; // Or './main.css'
 import React, { useState, useEffect } from 'react';
 import { Play, Users, TrendingUp, Award, Star, CheckCircle, ArrowRight, Quote } from 'lucide-react';
 
