@@ -6,7 +6,7 @@ function CoachSection() {
     {
       src: "/Pinoy-in-profits/hero1.png",
       alt: "Coach Lemuel",
-      specialty: "Fundamental",
+      specialty: "Fundamental and Sentiment",
       specialtyColor: "blue",
       name: "Coach Lemuel",
       description:
@@ -15,7 +15,7 @@ function CoachSection() {
     {
       src: "/Pinoy-in-profits/hero2.png",
       alt: "Coach Janeth",
-      specialty: "Technical Analysis",
+      specialty: "Technical and Sentiment",
       specialtyColor: "green",
       name: "Coach Janeth",
       description:
@@ -24,7 +24,7 @@ function CoachSection() {
     {
       src: "/Pinoy-in-profits/hero3.png",
       alt: "Coach Retchel",
-      specialty: "Risk Management",
+      specialty: "Technical and Risk Management",
       specialtyColor: "purple",
       name: "Coach Retchel",
       description:
@@ -32,80 +32,93 @@ function CoachSection() {
     },
   ];
 
+  const colorClasses = {
+    blue: {
+      border: "hover:border-blue-400",
+      hoverText: "hover:text-blue-900",
+      bg: "bg-blue-100",
+      text: "text-blue-800",
+      bgHover: "hover:bg-blue-200",
+      imageBorder: "hover:border-blue-500",
+    },
+    green: {
+      border: "hover:border-green-400",
+      hoverText: "hover:text-green-900",
+      bg: "bg-green-100",
+      text: "text-green-800",
+      bgHover: "hover:bg-green-200",
+      imageBorder: "hover:border-green-500",
+    },
+    purple: {
+      border: "hover:border-purple-400",
+      hoverText: "hover:text-purple-900",
+      bg: "bg-purple-100",
+      text: "text-purple-800",
+      bgHover: "hover:bg-purple-200",
+      imageBorder: "hover:border-purple-500",
+    },
+  };
+
   return (
-    <section className="py-20 px-6 bg-blue-950">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-6 bg-gray-50">
+      <div className="md:max-w-6xl lg:max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h3 className="text-4xl font-bold text-white mb-4">
+          <h3 className="text-4xl font-bold text-black mb-4">
             Meet Our Expert Coaches
           </h3>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Learn from experienced traders who have been through the ups and downs of the forex market
           </p>
         </div>
-        <FadeInSection>
-        <div className="grid md:grid-cols-3 gap-8">
-          {coaches.map(({ src, alt, specialty, specialtyColor, name, description }) => (
-            <div
-              key={name}
-              className={`
-                bg-white rounded-2xl p-8 border border-gray-200 text-center cursor-pointer flex flex-col h-full
-                hover:shadow-lg hover:border-${specialtyColor}-400
-                 duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
-                will-change-transform
-                transform hover:-translate-y-2 hover:scale-105
-              `}
-            >
-              <div className="relative mb-6 will-change-transform">
-                <img
-                  src={src}
-                  alt={alt}
-                  width={144}
-                  height={144}
-                  className={`
-                    w-36 h-36 rounded-full mx-auto object-cover border-4 border-blue-950
-                    hover:border-${specialtyColor}-500
-                     duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
-                    will-change-transform
-                  `}
-                />
-                <div className="mt-2">
-                  <span
-                    className={`
-                      text-xs font-medium bg-${specialtyColor}-100 text-${specialtyColor}-800 px-3 py-1 rounded-full
-                      hover:bg-${specialtyColor}-200 transition-colors
-                    `}
-                  >
-                    {specialty}
-                  </span>
-                </div>
-              </div>
-              <h3
-                className={`
-                  text-xl font-bold text-gray-900 mb-2
-                  hover:text-${specialtyColor}-900 transition-colors
-                `}
-              >
-                {name}
-              </h3>
-              <p
-                className={`
-                  text-gray-600 hover:text-gray-700 transition-colors
-                  flex-grow
-                `}
-              >
-                {description}
-              </p>
-            </div>
-          ))}
-        </div>
-        </FadeInSection>
 
-        <div className="text-center py-5 mt-15">
-          <button className="font-bold text-1xl text-blue-950 cursor-pointer px-10 bg-white hover:bg-white/90 p-3 rounded-2xl shadow-lg">
-            Be part of our community
-          </button>
-        </div>
+        <FadeInSection>
+          <div className="grid md:grid-cols-3 gap-8">
+            {coaches.map(({ src, alt, specialty, specialtyColor, name, description }) => {
+              const classes = colorClasses[specialtyColor];
+
+              return (
+                <div
+                  key={name}
+                  className={`
+                    bg-white rounded-2xl p-8 border border-gray-200 text-center cursor-pointer flex flex-col h-full
+                    hover:shadow-lg ${classes.border}
+                    duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
+                    will-change-transform transform hover:-translate-y-2 hover:scale-105
+                  `}
+                >
+                  <div className="relative mb-6 will-change-transform">
+                    <img
+                      src={src}
+                      alt={alt}
+                      width={144}
+                      height={144}
+                      className={`
+                        w-36 h-36 rounded-full mx-auto object-cover border-4 border-blue-950
+                        ${classes.imageBorder} duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform
+                      `}
+                    />
+                    <div className="mt-2">
+                      <span
+                        className={`
+                          text-xs font-medium ${classes.bg} ${classes.text} px-3 py-1 rounded-full
+                          ${classes.bgHover} transition-colors
+                        `}
+                      >
+                        {specialty}
+                      </span>
+                    </div>
+                  </div>
+                  <h3 className={`text-xl font-bold text-gray-900 mb-2 ${classes.hoverText} transition-colors`}>
+                    {name}
+                  </h3>
+                  <p className="text-gray-600 hover:text-gray-700 transition-colors flex-grow">
+                    {description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </FadeInSection>
       </div>
     </section>
   );
