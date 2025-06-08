@@ -6,3 +6,9 @@ html {
   overflow-y: scroll;
   
 }
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/Goride Sans.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

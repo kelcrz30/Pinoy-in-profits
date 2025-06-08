@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import { FadeInSection } from "../Animation/FadeInSection";
+import { motion } from "framer-motion";
 function CoachLeaderShip() {
     return ( 
             <section id="leadership" className="py-20 bg-blue-950">
@@ -16,24 +17,26 @@ function CoachLeaderShip() {
                                 role: "Founder & Coach",
                                 experience: "5+ Years Trading",
                                 specialty: "Risk Management Expert",
-                                image: "/Pinoy-in-profits/hero2.png"
+                                image: `${import.meta.env.BASE_URL}hero2.png`
                             },
                             {
                                 name: "Lemuel Buenviaje",
                                 role: "Founder & Coach",
                                 experience: "5+ Years Trading",
                                 specialty: "Fundamentals",
-                               image: "/Pinoy-in-profits/hero1.png"
+                               image: `${import.meta.env.BASE_URL}hero1.png`
                             },
                             {
                                 name: "Retchel Pacamara",
                                 role: "Founder & Coach",
-                                experience: "4+ Years Trading",
+                                experience: "6+ Years Trading",
                                 specialty: "Technical Analyst ",
-                               image: "/Pinoy-in-profits/hero3.png"
+                                image: `${import.meta.env.BASE_URL}hero3.png`
                             }
                         ].map((member, index) => (
-                            <div key={index} className="group">
+                            
+                            <FadeInSection delay={index * 0.3} key={index} className="group">
+                                
                                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
                                     <div className="relative h-64 flex items-center justify-center bg-gray-50">
                                         <img
@@ -51,7 +54,8 @@ function CoachLeaderShip() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                        
+                            </FadeInSection>
                         ))}
                     </div>
 

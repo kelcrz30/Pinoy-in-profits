@@ -1,5 +1,6 @@
 
 import { CheckCircle, Calendar, MessageCircle, TrendingUp, ArrowRight, Clock, Shield, Star } from 'lucide-react';
+import { FadeInNewSection, FadeInUp } from '../Animation/NewAnimation';
 function HowItWorks() {
   const steps = [
     {
@@ -33,22 +34,27 @@ function HowItWorks() {
   ];
     return ( 
         <section>
-                <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-20">
+                <div className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        <FadeInNewSection>
+        <div className="text-center mb-28">
+          <h2 className="text-5xl font-bold text-gray-900 mb-4">
             How It Works
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Simple steps to start your trading journey with personalized guidance
           </p>
         </div>
+        </FadeInNewSection>
 
         {/* Steps Flow */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+           
           {steps.map((step, index) => (
+            <FadeInUp key={index} delay={index * 0.2}>
+           
             <div key={index} className="relative group">
               {/* Connector Line */}
               {index < steps.length - 1 && (
@@ -73,8 +79,11 @@ function HowItWorks() {
                 <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             </div>
+            </FadeInUp>
           ))}
+          
         </div>
+
         </div>
             </div>
         </section>

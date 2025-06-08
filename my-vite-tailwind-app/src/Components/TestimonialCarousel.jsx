@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Star, Play } from 'lucide-react';
 
-const TestimonialCarousel = ({ testimonials = [], onVideoClick, testimonial }) => {
+const TestimonialCarousel = ({ testimonials = [], onVideoClick,  }) => {
   const [paused, setPaused] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -97,9 +97,9 @@ const TestimonialCarousel = ({ testimonials = [], onVideoClick, testimonial }) =
               </div>
               <button
                 onClick={() => onVideoClick(testimonial.videoId)}
-                className="flex items-center gap-1 bg-gray-900 text-white px-2 py-1 text-xs rounded hover:bg-gray-800"
+                className="flex items-center gap-1 bg-gray-900 text-white px-4 py-3 text-xs rounded-full hover:bg-gray-800"
               >
-                <Play className="w-3 h-3 text-re" /> Watch
+                <Play className="w-3 h-3" /> Watch
               </button>
             </div>
           </div>

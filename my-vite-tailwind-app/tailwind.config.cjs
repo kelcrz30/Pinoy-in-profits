@@ -8,7 +8,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        goride: ['MyFont', 'sans-serif'],
+        dmserif: ['"DM Serif Text"', 'serif'],
+      }
+    },
   },
   plugins: [aspectRatio],
 };

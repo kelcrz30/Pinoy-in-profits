@@ -32,8 +32,8 @@ function Services() {
   return ( 
     <>
       <HeaderServices/>
-      <ChooseLearningPath/>
       <HowItWorks/>
+      <ChooseLearningPath/>
       <ConsultationSection />
     </>
   );

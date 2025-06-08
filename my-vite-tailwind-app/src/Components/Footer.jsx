@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Footer() {
     return ( 
         <footer className="border-t bg-blue-950 border-gray-200">
@@ -7,7 +8,7 @@ function Footer() {
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <img src="/Pinoy-in-profits/logo2.png" alt="" 
+                <img src={`${import.meta.env.BASE_URL}logo2.png`} alt="" 
                 className="w-12"
                 />
                 <span className="font-semibold text-white">Pinoys in Profit</span>
@@ -21,23 +22,21 @@ function Footer() {
             <div>
               <h4 className="font-semibold text-white mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-white/50 hover:text-blue-900 transition-colors">Home</a></li>
-                <li><a href="#" className="text-white/50 hover:text-blue-900 transition-colors">About</a></li>
-                <li><a href="#" className="text-white/50 hover:text-blue-900 transition-colors">Courses</a></li>
-                <li><a href="#" className="text-white/50 hover:text-blue-900 transition-colors">Contact</a></li>
+                 <li><Link to={"/"} className="text-white/50 hover:text-white transition-colors">Home</Link></li>
+                 <li><Link to={"/about"} className="text-white/50 hover:text-white transition-colors">About</Link></li>
+                 <li><Link to={"/services"} className="text-white/50 hover:text-white transition-colors">Services</Link></li>
+                <li> <Link to={"/contact"} className="text-white/50 hover:text-white transition-colors">Contact us</Link></li>          
               </ul>
+            </div>
+              <div>
+              <h3 className="text-white mb-4">Disclaimer  </h3>
+              <div>
+                <p className="space-y-2 text-sm text-white/50 ">Forex trading on margin entails high risk and is not suitable for all investors.
+                Past performance is not an indication of future results. In this case, as well the high degree of leverage can act both against you and for you.
+                </p>
+              </div>
             </div>
 
-            {/* Resources */}
-            <div>
-              <h4 className="font-semibold text-white mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-white/50  hover:text-blue-900 transition-colors">Trading Guides</a></li>
-                <li><a href="#" className="text-white/50  hover:text-blue-900 transition-colors">Market Analysis</a></li>
-                <li><a href="#" className="text-white/50  hover:text-blue-900 transition-colors">Community</a></li>
-                <li><a href="#" className="text-white/50  hover:text-blue-900 transition-colors">Support</a></li>
-              </ul>
-            </div>
 
             {/* Contact */}
             <div>
@@ -72,9 +71,7 @@ function Footer() {
           {/* Copyright */}
           <div className="border-t border-gray-200 mt-8 pt-6 text-center">
             <p className="text-sm text-gray-500">
-              © 2024 Pinoys in Profit. All rights reserved. | 
-              <a href="#" className="hover:text-blue-900 transition-colors ml-1">Privacy Policy</a> | 
-              <a href="#" className="hover:text-blue-900 transition-colors ml-1">Terms of Service</a>
+              © 2025 Pinoys in Profit. All rights reserved. 
             </p>
           </div>
         </div>

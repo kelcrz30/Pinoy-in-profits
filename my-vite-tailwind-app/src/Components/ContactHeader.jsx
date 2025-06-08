@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle, Mail, Facebook, Youtube, Instagram } from "lucide-react";
 import { useState,useEffect } from "react";
+import { FadeInLeft, FadeInUp } from "../Animation/NewAnimation";
 
 
 function ContactPage() {
@@ -89,7 +90,7 @@ function ContactPage() {
             console.error('Error text:', error.text);
 
             if(error.status === 422) {
-                setIsError('There was an issue with the email configuration. Please contact us directly at davenykel47@gmail.com');
+                setIsError('There was an issue with the email configuration. Please contact us directly at pinoysinprofit@gmail.com');
             }else {
                 setIsError('Failed to send message. Please try again or contact us directly.');
             }   
@@ -99,10 +100,11 @@ function ContactPage() {
     }
 
     return ( 
-    <section className="w-full py-10 min-h-[60vh] bg-blue-950">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-10 min-h-[60vh] bg-white">
+  <div className="max-w-7xl  font-dm mx-auto px-4 sm:px-6 lg:px-8">
+ 
     <div className="py-12">
-      <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl">
+      <h1 className="text-black font-dmserif text-4xl sm:text-5xl md:text-7xl">
         Get In Touch
       </h1>
     </div>
@@ -111,8 +113,8 @@ function ContactPage() {
       {/* Left Side (Form) */}
       <div className="md:w-1/2 mb-10 md:mb-0">
         <div className="space-y-6">
-          <h3 className="font-bold text-xl text-white ">Send us a message</h3>
-          <p className="text-white/85 text-sm md:text-base">
+          <h3 className="font-bold text-xl text-black ">Send us a message</h3>
+          <p className="text-black/85 text-sm md:text-base">
             Feel free to reach out to us for any inquiries or assistance you need. We’re here to help you!
           </p>
 
@@ -128,7 +130,7 @@ function ContactPage() {
                 placeholder="Enter your name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full border-b-4 p-3 text-white border-white outline-none bg-blue-950"
+                className="w-full border-b-4 p-3 text-black border-black outline-none bg-white"
               />
               <input
                 name="email"
@@ -136,7 +138,7 @@ function ContactPage() {
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full border-b-4 p-3 text-white border-white outline-none bg-blue-950"
+                className="w-full border-b-4 p-3 text-black border-black outline-none bg-white"
               />
               <input
                 name="number"
@@ -144,14 +146,14 @@ function ContactPage() {
                 placeholder="Enter number"
                 value={formData.number}
                 onChange={handleInputChange}
-                className="w-full border-b-4 p-3 text-white border-white outline-none bg-blue-950"
+                className="w-full border-b-4 p-3 text-black border-black outline-none bg-white"
                 required
               />
               <select
                 name="interested"
                 value={formData.interested}
                 onChange={handleInputChange}
-                className=" w-full border-b-4 p-3 text-white border-white outline-none bg-blue-950"
+                className=" w-full border-b-4 p-3 text-black border-black outline-none bg-white"
               >
                 <option value="">What do you need help with?</option>
                 <option value="need-guidance">I’m Not Sure What to Choose / Need Help Deciding</option>
@@ -167,7 +169,7 @@ function ContactPage() {
                 onChange={handleInputChange}
                 placeholder="What's your concern?"
                 rows="4"
-                className="bg-blue-950 col-span-1 sm:col-span-2 border-b-4 p-3 border-white text-white outline-none resize-none"
+                className="bg-white col-span-1 sm:col-span-2 border-b-4 p-3 border-black text-black outline-none resize-none"
               ></textarea>
 
               {/* Error Message */}
@@ -190,7 +192,7 @@ function ContactPage() {
                   </>
                 ) : (
                   <>
-                    Schedule My Free Consultation
+                    Send Message
                     <ArrowRight className="w-5 h-5" />
                   </>
                 )}
@@ -224,43 +226,43 @@ function ContactPage() {
 
       {/* Right Side (Contact Info) */}
       <div className="md:w-1/2 space-y-8">
-        <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
-          <h3 className="text-lg font-semibold text-gray-800">Call Us</h3>
-          <p className="text-sm text-gray-600">
+        <div className="bg-blue-950 rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
+          <h3 className="text-lg font-semibold text-white">Call Us</h3>
+          <p className="text-sm text-white/90">
             Need assistance right away? Give us a call!
           </p>
-          <p className="text-orange-600 font-semibold mt-1">0917-570-3635</p>
+          <p className="text-yellow-500 font-semibold mt-1">0917-570-3635</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
-          <h3 className="text-lg font-semibold text-gray-800">Visit Us</h3>
-          <p className="text-sm text-gray-600">
+        <div className="bg-blue-950 rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
+          <h3 className="text-lg font-semibold text-white">Visit Us</h3>
+          <p className="text-sm text-white/90">
             Come see us at our office in Bonifacio Global City!
           </p>
           <a
             href="https://maps.app.goo.gl/fzYspSjVkvLjJEdQ6"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-orange-600 font-semibold mt-1 inline-block hover:underline"
+            className="text-yellow-500 font-semibold mt-1 inline-block hover:underline"
           >
             📍 17th Floor, High Street South Corporate Plaza Tower 2, BGC, Taguig, Metro Manila
           </a>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
-          <h3 className="text-lg font-semibold text-gray-800">Social</h3>
-          <p className="text-sm text-gray-600">Follow us on social media:</p>
+        <div className="bg-blue-950 rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
+          <h3 className="text-lg font-semibold text-white">Social</h3>
+          <p className="text-sm text-white/90">Follow us on social media:</p>
           <div className="flex space-x-4 mt-2 text-2xl">
-            <a href="https://www.facebook.com/profile.php?id=100067103928166" target="_blank" className="text-blue-600 hover:text-blue-800">
+            <a href="https://www.facebook.com/profile.php?id=100067103928166" target="_blank" className="text-blue-600 hover:text-blue-700">
               <i className="fab fa-facebook"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" className="text-pink-500 hover:text-pink-700">
+            <a href="https://instagram.com" target="_blank" className="text-pink-500 hover:text-pink-600">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://youtube.com" target="_blank" className="text-red-600 hover:text-red-800">
+            <a href="https://youtube.com" target="_blank" className="text-red-600 hover:text-red-700">
               <i className="fab fa-youtube"></i>
             </a>
-            <a href="https://www.tiktok.com/@pinoys_in_profit?is_from_webapp=1&sender_device=pc" target="_blank" className="text-black hover:text-gray-800">
+            <a href="https://www.tiktok.com/@pinoys_in_profit?is_from_webapp=1&sender_device=pc" target="_blank" className="text-black hover:text-black/95">
               <i className="fab fa-tiktok"></i>
             </a>
           </div>

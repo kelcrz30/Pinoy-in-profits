@@ -39,9 +39,10 @@ function WhatyouGet() {
         {
          icon: <Bot className="text-blue-950" size={32} />,
          title: "PIPBOT Automated Trading",
-          desc: "Let PIPBOT trade for you with consistent, intelligent 24/5 market scanning"
+          desc: "Let PIPBOT trade for you with consistent profit and intelligent 24/5 market scanning"
+
           }].map(({icon, title, desc}, i) => (
-            <FadeInSection key={title} delay={i * 0.2}>
+            <FadeInSection key={title} delay={i * 0.3}>
               <div className='bg-white hover:bg-blue-950 rounded-2xl p-8 border border-gray-200 group flex flex-col h-full transition-all duration-300 ease-in-out hover:shadow-xl'>
                 <div className='bg-gray-100  w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors'>
                   {icon}

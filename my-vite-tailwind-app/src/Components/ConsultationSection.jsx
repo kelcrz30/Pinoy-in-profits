@@ -99,12 +99,12 @@ function ConsultationSection({ id }) {
   };
 
   return (
-<section id="consultation" className=''>
-    <div className='max-w-7xl mt-20 py-20 mx-auto sm:px-8 lg:px-8 '>
+<section id="consultation" className='bg-gray-50'>
+    <div className='max-w-7xl px-2 mt-20 py-20 mx-auto sm:px-8 lg:px-8 '>
         <div>
             <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-0'>
-                    <div className="p-12 flex flex-col justify-center">
+                    <div className="p-5 md:p-12 flex flex-col justify-center">
                         <div className='mb-8'>
                             <h3 className='text-5xl font-bold text-black mb-6'>
                                 Ready to Start Your Trading Journey?
@@ -216,7 +216,7 @@ function ConsultationSection({ id }) {
                                     <button
                                         onClick={handleSubmit}
                                         disabled={isLoading}
-                                        className="w-full bg-white hover:bg-white/90 text-black font-bold py-4 px-8 rounded-lg  transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                                        className="w-full bg-white hover:bg-white/90 text-black font-bold py-3 md:py-4 lg:py-4 px-8 rounded-lg  transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                                     >
                                         {isLoading ? (
                                             <>
@@ -225,13 +225,13 @@ function ConsultationSection({ id }) {
                                             </>
                                         ) : (
                                             <>
-                                                Schedule My Free Consultation
+                                                Book Now
                                                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                                             </>
                                         )}
                                     </button>
                                     <p className="text-sm text-gray-400 text-center mt-3">
-                                        We'll contact you within 24 hours to schedule your call
+                                        Send message
                                     </p>
                                 </div>
                             </div>

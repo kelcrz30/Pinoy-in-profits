@@ -4,7 +4,7 @@ import { FadeInSection } from "../Animation/FadeInSection";
 function CoachSection() {
   const coaches = [
     {
-      src: "/Pinoy-in-profits/hero1.png",
+      src: "hero1.png",  // Just the filename here
       alt: "Coach Lemuel",
       specialty: "Fundamental and Sentiment",
       specialtyColor: "blue",
@@ -13,7 +13,7 @@ function CoachSection() {
         "Fundamental and sentiment analysis expert, bringing clarity to complex market dynamics.",
     },
     {
-      src: "/Pinoy-in-profits/hero2.png",
+      src: "hero2.png",
       alt: "Coach Janeth",
       specialty: "Technical and Sentiment",
       specialtyColor: "green",
@@ -22,7 +22,7 @@ function CoachSection() {
         "Expert in technical analysis, known for her structured approach to identifying market trends and optimal trading zones.",
     },
     {
-      src: "/Pinoy-in-profits/hero3.png",
+      src: "hero3.png",
       alt: "Coach Retchel",
       specialty: "Technical and Risk Management",
       specialtyColor: "purple",
@@ -60,7 +60,7 @@ function CoachSection() {
   };
 
   return (
-    <section className="py-20 px-6 bg-gray-50">
+    <section className="py-20 px-6 bg-white">
       <div className="md:max-w-6xl lg:max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h3 className="text-4xl font-bold text-black mb-4">
@@ -73,10 +73,11 @@ function CoachSection() {
 
         <FadeInSection>
           <div className="grid md:grid-cols-3 gap-8">
-            {coaches.map(({ src, alt, specialty, specialtyColor, name, description }) => {
-              const classes = colorClasses[specialtyColor];
-
+            {coaches.map(({ src, alt, specialty, specialtyColor, name, description }, index) => {
+             const classes = colorClasses[specialtyColor];
+ 
               return (
+                <FadeInSection delay={index * 0.3} key={name} className="group">
                 <div
                   key={name}
                   className={`
@@ -88,7 +89,7 @@ function CoachSection() {
                 >
                   <div className="relative mb-6 will-change-transform">
                     <img
-                      src={src}
+                      src={`${import.meta.env.BASE_URL}${src}`} 
                       alt={alt}
                       width={144}
                       height={144}
@@ -115,6 +116,7 @@ function CoachSection() {
                     {description}
                   </p>
                 </div>
+                 </FadeInSection>
               );
             })}
           </div>

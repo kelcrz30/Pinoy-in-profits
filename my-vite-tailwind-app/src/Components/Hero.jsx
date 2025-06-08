@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Play, Users, TrendingUp, Award, Star, CheckCircle, ArrowRight, Quote, X, Menu, Shield, Trophy, Target } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FadeInLeft, FadeInNewSection, FadeInRight, FadeInUp } from '../Animation/NewAnimation';
 
 function Hero() {
   const [showModal, setShowModal] = useState(false);
@@ -29,38 +30,86 @@ function Hero() {
     visible: { opacity: 1, y: 0 },
   };
 
+  // Title animation variants
+  const titleVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const subtitleVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
   return (
     <section className="min-h-screen bg-white">
-      {/* Hero Section - Cleaner Design */}
       <section className=" sm:mt-30 px-6 ">
         <div className=" md:max-w-3xl lg:max-w-7xl max-w-7xl mx-auto ">
           <div className="grid lg:grid-cols-2 mb-20 gap-8 lg:gap-16 items-center ">
-            {/* Text Content */}
-            <motion.div
-              className="order-1 lg:order-1"
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-            >
-              <div className="px-6 mt-20  text-center md:text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
-                <h1 className="text-4xl text-center md:text-center lg:text-left sm:text-4xl lg:text-4xl xl:text-6xl font-bold mb-4 lg:mb-6 leading-tight">
+            <div className="order-1 lg:order-1">
+              <div className="px-6 mt-20 text-center md:text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
+                
+                {/* Animated Title */}
+                <motion.h1
+                  initial="hidden"
+                  animate="visible"
+                  variants={titleVariants}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="text-4xl text-center md:text-center lg:text-left sm:text-4xl lg:text-4xl xl:text-6xl font-bold mb-4 lg:mb-6 leading-tight"
+                >
                   Struggling with forex?
-                </h1>
-                <h2 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-light text-teal-600 mb-6 lg:mb-8 leading-tight">
+                </motion.h1>
+
+                {/* Animated Subtitle */}
+                <motion.h2
+                  initial="hidden"
+                  animate="visible"
+                  variants={subtitleVariants}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-light text-teal-600 mb-6 lg:mb-8 leading-tight"
+                >
                   Join a Community That Supports You.
-                </h2>
-                <p className="text-base lg:text-base xl:text-lg text-gray-600 mb-8 lg:mb-8 leading-relaxed">
+                </motion.h2>
+
+                {/* Animated Paragraph */}
+                <motion.p
+                  initial="hidden"
+                  animate="visible"
+                  variants={textVariants}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="text-base lg:text-base xl:text-lg text-gray-600 mb-8 lg:mb-8 leading-relaxed"
+                >
                   We're here to guide you through every challenge and help you grow
                   into a confident trader. Get the emotional and strategic support
                   you need to succeed.
-                </p>
-                <div className="flex justify-center lg:justify-start">
-                  <button className="bg-blue-950 hover:bg-blue-950/95 text-white px-6 lg:px-6 xl:px-8 py-3 lg:py-3 xl:py-4 rounded-full font-medium transition-colors inline-flex items-center shadow-lg text-sm lg:text-sm xl:text-base">
-                    Join our community today <ArrowRight className="ml-2" size={18} />
-                  </button>
-                </div>
+                </motion.p>
+
+                {/* Animated Button */}
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={buttonVariants}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  className="flex justify-center lg:justify-start"
+                >
+                  <Link to="/services#consultation">
+                    <button className="bg-blue-950 hover:bg-blue-950/95 text-white px-6 lg:px-6 xl:px-8 py-3 lg:py-3 xl:py-4 rounded-full font-medium transition-colors inline-flex items-center shadow-lg text-sm lg:text-sm xl:text-base">
+                      Join our community today <ArrowRight className="ml-2" size={18} />
+                    </button>
+                  </Link>
+                </motion.div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Image */}
             <motion.div
@@ -72,11 +121,10 @@ function Hero() {
             >
               <div className="relative mt-20 ">
                 <img
-                  src="/Pinoy-in-profits/hero.png"
+                  src={`${import.meta.env.BASE_URL}hero.png`}
                   alt="Forex trading community"
                   className="rounded-2xl w-full h-[300px] sm:h-[400px] lg:h-[550px] object-cover shadow-lg"
                 />
-                {/* Overlay for better mobile appearance */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl lg:hidden"></div>
               </div>
             </motion.div>
@@ -84,34 +132,32 @@ function Hero() {
         </div>
       </section>
 
-  <section className="relative w-full h-[60vh] overflow-hidden group">
-      {/* Background Video */}
-      <video
-        src="/Pinoy-in-profits/pipshort.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      />
+      <section className="relative w-full h-[60vh] overflow-hidden group">
+        {/* Background Video */}
+        <video
+          src={`${import.meta.env.BASE_URL}pipshort.mp4`} 
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
 
-      {/* Black Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60" />
+        {/* Black Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-      {/* Centered Text */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
-
-
-        {/* Hidden by default, shown on hover via `group-hover` */}
-        <button
-          onClick={() => setShowModal(true)}
-          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 text-white/85 text-black px-6 py-3 rounded-full font-semibol"
-        >
-          <Play size={20} />
-          Watch Full Video
-        </button>
-      </div>
-    </section>
+        {/* Centered Text */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+          {/* Hidden by default, shown on hover via `group-hover` */}
+          <button
+            onClick={() => setShowModal(true)}
+            className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 text-white/85 text-black px-6 py-3 rounded-full font-semibol"
+          >
+            <Play size={20} />
+            Watch Full Video
+          </button>
+        </div>
+      </section>
 
       {/* Enhanced Modal */}
       <AnimatePresence>
