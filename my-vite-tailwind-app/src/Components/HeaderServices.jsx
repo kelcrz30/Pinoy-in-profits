@@ -11,7 +11,7 @@ const HeaderServices = () => {
             <div className="relative container mx-auto px-6 py-20">
               <FadeInSection>
                 <div className="flex  flex-col items-center justify-center text-center py-20 gap-2">
-                    <h1 className='text-5xl font-dmserif md:text-8xl text-white '>Our Services</h1>
+                    <h1 className='text-5xl font-semibold md:text-8xl text-white '>Our Services</h1>
                      <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
                       Join our elite community of traders and unlock consistent profits with our proven strategies, automated EA, and personalized coaching programs.
                      </p>
