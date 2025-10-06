@@ -13,7 +13,7 @@ function CoachLeaderShip() {
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             {
-                                name: "Janeth Aclera",
+                                name: "Janeth Aclera, CTA",
                                 role: "Founder & Coach",
                                 experience: "5+ Years Trading",
                                 specialty: "Risk Management Expert",

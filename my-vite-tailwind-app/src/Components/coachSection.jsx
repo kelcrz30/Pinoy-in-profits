@@ -15,7 +15,7 @@ function CoachSection() {
     {
       src: "hero2.png",
       alt: "Coach Janeth",
-      specialty: "Technical and Sentiment",
+      specialty: "Founder & Coach",
       specialtyColor: "green",
       name: "Coach Janeth",
       description:
