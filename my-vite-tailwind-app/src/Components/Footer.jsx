@@ -71,7 +71,7 @@ function Footer() {
           {/* Copyright */}
           <div className="border-t border-gray-200 mt-8 pt-6 text-center">
             <p className="text-sm text-gray-500">
-              © 2025 Pinoys in Profit. All rights reserved. 
+              © 2026 Pinoys in Profit. All rights reserved. 
             </p>
           </div>
         </div>
