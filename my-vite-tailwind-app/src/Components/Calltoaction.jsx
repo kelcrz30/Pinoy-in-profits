@@ -41,11 +41,6 @@ function CalltoAction() {
           </Link>
 
           {/* Bottom decorative line */}
-          <div className="mt-16 flex items-center justify-center gap-4">
-            <div className="w-16 h-px bg-slate-300"></div>
-            <span className="text-xs text-slate-400">500+ Active Traders</span>
-            <div className="w-16 h-px bg-slate-300"></div>
-          </div>
         </FadeInUp>
       </div>
     </section>
