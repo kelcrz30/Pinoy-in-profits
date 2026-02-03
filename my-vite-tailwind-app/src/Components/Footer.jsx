@@ -46,7 +46,7 @@ function Footer() {
                
               </div>
               <div className="flex space-x-3 mt-4">
-                <a href="https://www.facebook.com/profile.php?id=100067103928166" 
+                <a href="https://www.facebook.com/profile.php?id=100063802973364" 
                    className="w-8 h-8 bg-gray-200 rounded-full text-blue-600 flex items-center justify-center hover:bg-blue-900 hover:text-white transition-colors" 
                    target="_blank" 
                    rel="noopener noreferrer">

@@ -253,7 +253,7 @@ function ContactPage() {
           <h3 className="text-lg font-semibold text-white">Social</h3>
           <p className="text-sm text-white/90">Follow us on social media:</p>
           <div className="flex space-x-4 mt-2 text-2xl">
-            <a href="https://www.facebook.com/profile.php?id=100067103928166" target="_blank" className="text-blue-600 hover:text-blue-700">
+            <a href="https://www.facebook.com/profile.php?id=100063802973364" target="_blank" className="text-blue-600 hover:text-blue-700">
               <i className="fab fa-facebook"></i>
             </a>
             <a href="https://instagram.com" target="_blank" className="text-pink-500 hover:text-pink-600">
