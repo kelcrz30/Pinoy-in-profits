@@ -8,7 +8,6 @@ function Contact() {
         <div>
             <ContactHeader/>           
             <Map/>
-            <Faq/>
             <Footer/>
         </div>
      );

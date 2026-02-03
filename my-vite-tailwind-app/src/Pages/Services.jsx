@@ -32,7 +32,6 @@ function Services() {
   return ( 
     <>
       <HeaderServices/>
-      <HowItWorks/>
       <ChooseLearningPath/>
       <ConsultationSection />
     </>

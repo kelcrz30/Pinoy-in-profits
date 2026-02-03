@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 function CoachLeaderShip() {
     return ( 
             <section id="leadership" className="py-20 bg-blue-950">
-                <div className="max-w-6xl mx-auto px-6">
+                <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-white mb-4">Meet Our Leadership</h2>
                         <p className="text-xl text-gray-400 max-w-3xl mx-auto">Experienced traders and educators dedicated to your success</p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
                             {
                                 name: "Janeth Aclera, CTA",
@@ -32,6 +32,13 @@ function CoachLeaderShip() {
                                 experience: "6+ Years Trading",
                                 specialty: "Technical Analyst ",
                                 image: `${import.meta.env.BASE_URL}hero3.png`
+                            },
+                            {
+                                name: "Michael Leonor",
+                                role: "Founder & Coach",
+                                experience: "10+ Years Trading",
+                                specialty: "Technical Analyst ",
+                                image: `${import.meta.env.BASE_URL}hero4.jpg`
                             }
                         ].map((member, index) => (
                             

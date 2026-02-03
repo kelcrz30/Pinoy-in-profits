@@ -1,65 +1,112 @@
-import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import TestimonialCarousel from './TestimonialCarousel'; // Make sure the path is correct
+import React, { useState, useRef, useEffect } from 'react';
+import { Star, Play } from 'lucide-react';
 
-const TestimonialSection = () => {
-  const [activeVideo, setActiveVideo] = useState(null);
+const TestimonialCarousel = ({ testimonials = [], onVideoClick,  }) => {
+  const [paused, setPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const testimonials = [
-    { id: 1, name: "Bernard", role: "Engineer", rating: 5, text: "Very Knowledgeable", videoId: "81SmGYkRoaQ" },
-    { id: 2, name: "Rouel", role: "Surgeon", rating: 5, text: "I Highly recommend PIP", videoId: "joyPKqExMdE" },
-    { id: 3, name: "Joel", role: "Business Owner", rating: 5, text: "Alam nila yung ginagawa nila", videoId: "95-AlM5afH8" },
-    { id: 4, name: "Cecile", role: "Business Owner", rating: 5, text: "They Were able to Answer all the Questions of the Students", videoId: "fMOkClMMVYA" },
-    { id: 5, name: "Jericson", role: "Business Owner", rating: 5, text: "First Time ko Magkaroon ng Coach Na Active Sa Community", videoId: "MNkwvDhnAsA?t=5" },
-    { id: 6, name: "Victor", role: "Student", rating: 5, text: "Napaka Organize ng mga Coaches", videoId: "LZ45_7C-YJc" },
-    { id: 7, name: "Jeford", role: "Real estate agent", rating: 5, text: "Very Helpful ang mga Trainings", videoId: "d2NUkigZ92Q" },
-    { id: 8, name: "Christian", role: "Student", rating: 5, text: "Napaka Knowledgeable Mapa Fundamentals man o Technical Analysis", videoId: "LXiZnXoVvIM" },
-  ];
+  const containerRef = useRef(null);
+  const animationRef = useRef(null);
+  const x = useRef(0);
+  const startX = useRef(0);
+
+  const duplicated = [...testimonials, ...testimonials];
+
+  useEffect(() => {
+    const animate = () => {
+      if (!paused && !isDragging) {
+        x.current -= 2;
+        const container = containerRef.current;
+        if (container) {
+          const scrollWidth = container.scrollWidth / 2;
+          if (-x.current >= scrollWidth) {
+            x.current = 0;
+          }
+          container.style.transform = `translateX(${x.current}px)`;
+        }
+      }
+      animationRef.current = requestAnimationFrame(animate);
+    };
+    animate();
+    return () => cancelAnimationFrame(animationRef.current);
+  }, [paused, isDragging]);
+
+  // Drag handlers
+  const handlePointerDown = (e) => {
+    setPaused(true);
+    setIsDragging(true);
+    startX.current = e.clientX || e.touches?.[0].clientX;
+  };
+
+  const handlePointerMove = (e) => {
+    if (!isDragging) return;
+    const currentX = e.clientX || e.touches?.[0].clientX;
+    const dx = currentX - startX.current;
+    startX.current = currentX;
+    x.current += dx;
+    if (containerRef.current) {
+      containerRef.current.style.transform = `translateX(${x.current}px)`;
+    }
+  };
+
+  const handlePointerUp = () => {
+    setIsDragging(false);
+    setPaused(false);
+  };
 
   return (
-    <section className="py-16 px-6 bg-gray-50">
-      <div className=" mx-auto">
-  
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-          <p className="text-gray-600">Here's what our clients have to say about their experience.</p>
-        </div>
-
-        {/* Carousel */}
-        <TestimonialCarousel
-          testimonials={testimonials}
-          onVideoClick={setActiveVideo}
-        />
-
-        {/* Stats section */}
-
-      </div>
-
-      {/* Video Modal */}
-      {activeVideo && (
-        <div className='fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4'>
-          <div className='relative w-full max-w-4xl'>
-            <button
-              onClick={() => setActiveVideo(null)}
-              className='absolute -top-8 right-0 text-white text-2xl'
-            >
-              ×
-            </button>
-            <div className="aspect-video w-full bg-black rounded-lg overflow-hidden">
-              <iframe
-                className="w-full h-[60vh]"
-                src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
-                title="Testimonial Video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+    <div
+      className="relative w-full overflow-hidden py-10 mb-10"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onTouchStart={handlePointerDown}
+      onTouchMove={handlePointerMove}
+      onTouchEnd={handlePointerUp}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      id='testimonial'
+    >
+      <div
+        ref={containerRef}
+        className="flex gap-6 w-max cursor-grab select-none"
+      >
+        {duplicated.map((testimonial, index) => (
+          <div
+            key={index}
+            className="bg-white min-w-[300px] max-w-[300px] h-[220px] p-4 rounded-lg shadow border flex flex-col justify-between"
+          >
+            <div className="flex mb-2">
+              {[...Array(testimonial.rating)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-4 h-4 text-yellow-400 fill-current"
+                />
+              ))}
+            </div>
+            <p className="text-gray-700 text-sm mb-2">"{testimonial.text}"</p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <div className="w-9 h-9 bg-blue-500 rounded-full text-white flex items-center justify-center mr-2">
+                  {testimonial.name.charAt(0)}
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium">{testimonial.name}</h4>
+                  <p className="text-xs text-gray-500">{testimonial.role}</p>
+                </div>
+              </div>
+              <button
+                onClick={() => onVideoClick(testimonial.videoId)}
+                className="flex items-center gap-1 bg-gray-900 text-white px-4 py-3 text-xs rounded-full hover:bg-gray-800"
+              >
+                <Play className="w-3 h-3" /> Watch
+              </button>
             </div>
           </div>
-        </div>
-      )}
-    </section>
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default TestimonialSection;
+export default TestimonialCarousel;

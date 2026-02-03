@@ -78,7 +78,7 @@ function Hero() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-light text-teal-600 mb-6 lg:mb-8 leading-tight"
                 >
-                  Join a Community That Supports You.
+                  Join our FREE forex community that supports you! 
                 </motion.h2>
 
                 {/* Animated Paragraph */}
@@ -102,9 +102,9 @@ function Hero() {
                   transition={{ duration: 0.8, delay: 0.8 }}
                   className="flex justify-center lg:justify-start"
                 >
-                  <Link to="/services#consultation">
+                  <Link to="https://www.youtube.com/watch?v=PY8E9atq054">
                     <button className="bg-blue-950 hover:bg-blue-950/95 text-white px-6 lg:px-6 xl:px-8 py-3 lg:py-3 xl:py-4 rounded-full font-medium transition-colors inline-flex items-center shadow-lg text-sm lg:text-sm xl:text-base">
-                      Join our community today <ArrowRight className="ml-2" size={18} />
+                      Join our FREE forex community now! <ArrowRight className="ml-2" size={18} />
                     </button>
                   </Link>
                 </motion.div>

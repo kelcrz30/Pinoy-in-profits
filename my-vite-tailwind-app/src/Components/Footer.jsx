@@ -43,7 +43,7 @@ function Footer() {
               <h4 className="font-semibold text-white mb-4">Get in Touch</h4>
               <div className="space-y-2 text-sm text-white/50 ">
                 <p>pinoysinprofit@gmail.com</p>
-                <p>17th Floor, High Street South Corporate Plaza Tower 2, 26th Street, Bonifacio Global City, Taguig, Metro Manila</p>
+               
               </div>
               <div className="flex space-x-3 mt-4">
                 <a href="https://www.facebook.com/profile.php?id=100067103928166" 

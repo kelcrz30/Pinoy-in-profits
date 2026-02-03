@@ -8,6 +8,8 @@ import WhatyouGet from "../Components/WhatyouGet";
 import Footer from "../Components/Footer";
 import Hero from "../Components/Hero";
 import CoachLeaderShip from "../Components/coachLeadership";
+import HowItWorks from "../Components/HowItWorks";
+import Faq from "../Components/Faq";
 
 // Testimonials data
 const testimonials = [
@@ -27,8 +29,10 @@ function Home() {
     <Hero/>
       <WhatyouGet />
       <InfoSection />
+      <HowItWorks/>
       <CoachLeaderShip/>
       <TestimonialSection testimonials={testimonials} />
+      <Faq/>
       <Calltoaction />
       <Footer />
     </>

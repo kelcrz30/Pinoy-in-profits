@@ -47,7 +47,7 @@ function Navbar() {
          </Link>
        </nav>
        
-       <Link to="/services#consultation" className="hidden lg:block">
+       <Link to="https://www.youtube.com/watch?v=PY8E9atq054" className="hidden lg:block">
          <button className="bg-blue-950  hover:bg-blue-950/95 text-white px-6 py-3 rounded-full font-semibold transition-colors">
            Join now
          </button>

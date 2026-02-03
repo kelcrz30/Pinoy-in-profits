@@ -34,8 +34,7 @@ function ChooseLearningPath() {
                 </span>
               </div>
               <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold mb-3">Discord Community</h2>
-                <span className="text-blue-600 text-3xl font-bold">₱995</span>
+                <h2 className="text-2xl font-bold mb-3">Community Support</h2>
               </div>
               <div className="space-y-3 flex-grow">
                 {[
@@ -69,11 +68,9 @@ function ChooseLearningPath() {
             <div className="bg-white rounded-2xl p-6 border-2 border-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl flex flex-col h-full">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold mb-3">
-                  PIP Intensive Program
+                  Forex Modules
                 </h2>
-                <span className="text-blue-600 text-3xl font-bold">
-                  ₱34,997
-                </span>
+   
               </div>
               <div className="space-y-3 flex-grow">
                 {[
@@ -107,9 +104,7 @@ function ChooseLearningPath() {
             <div className="bg-white rounded-2xl p-6 border-2 border-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl flex flex-col h-full">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold mb-3">PIP VIP Program</h2>
-                <span className="text-blue-600 text-3xl font-bold">
-                  ₱74,997
-                </span>
+
               </div>
               <div className="space-y-3 flex-grow">
                 {[
@@ -142,9 +137,7 @@ function ChooseLearningPath() {
             <div className="bg-white rounded-2xl p-6 border-2 border-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl flex flex-col h-full">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold mb-3">PIP BOT</h2>
-                <span className="text-blue-600 text-3xl font-bold">
-                  FREE w/ $500 Deposit
-                </span>
+
               </div>
               <div className="space-y-3 flex-grow">
                 {[

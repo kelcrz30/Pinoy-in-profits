@@ -180,7 +180,7 @@ function About() {
                         Join a growing community of successful Filipino traders who are transforming their financial futures. Start your journey toward consistent profitability today.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link to="/services#consultation" className="hidden lg:block">
+                        <Link to="https://www.youtube.com/watch?v=PY8E9atq054" className="hidden lg:block">
                         <button className="bg-blue-950 text-white hover:bg-blue-950/95 font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg">
                             Join Our Community
                         </button>
