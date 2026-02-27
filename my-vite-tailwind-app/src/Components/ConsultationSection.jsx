@@ -175,10 +175,10 @@ function ConsultationSection({ id }) {
                                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
                             >
                                 <option value="" className="text-gray-900">Select Program Interest</option>
-                                <option value="discord-community" className="text-gray-900">Discord Community (₱1,000)</option>
-                                <option value="pip-intensive" className="text-gray-900">PIP Intensive Program (₱25,000)</option>
-                                <option value="pip-vip" className="text-gray-900">PIP VIP Program (₱55,000)</option>
-                                <option value="pip-bot" className="text-gray-900">PIP BOT (FREE w/ ₱500 Deposit)</option>
+                                <option value="discord-community" className="text-gray-900">Discord Community</option>
+                                <option value="pip-intensive" className="text-gray-900">PIP Intensive Program</option>
+                                <option value="pip-vip" className="text-gray-900">PIP VIP Program</option>
+                                <option value="pip-bot" className="text-gray-900">PIP BOT</option>
                             </select>
 
                             <select
