@@ -102,7 +102,7 @@ function Hero() {
                   transition={{ duration: 0.8, delay: 0.8 }}
                   className="flex justify-center lg:justify-start"
                 >
-                  <Link to="https://www.youtube.com/watch?v=PY8E9atq054">
+                  <Link to="https://www.youtube.com/watch?v=Bgf2EXLO_PM">
                     <button className="bg-blue-950 hover:bg-blue-950/95 text-white px-6 lg:px-6 xl:px-8 py-3 lg:py-3 xl:py-4 rounded-full font-medium transition-colors inline-flex items-center shadow-lg text-sm lg:text-sm xl:text-base">
                       Join our FREE forex community now! <ArrowRight className="ml-2" size={18} />
                     </button>

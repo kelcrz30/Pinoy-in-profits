@@ -34,7 +34,7 @@ function CalltoAction() {
 
           {/* CTA Button - Updated link to /services#consultation */}
           <Link
-            to="https://www.youtube.com/watch?v=PY8E9atq054"
+            to="https://www.youtube.com/watch?v=Bgf2EXLO_PM"
             className="inline-block px-10 py-4 bg-slate-900 text-white text-base tracking-wide hover:bg-slate-800 transition-all duration-300 hover:shadow-lg"
           >
             Join our FREE community now!

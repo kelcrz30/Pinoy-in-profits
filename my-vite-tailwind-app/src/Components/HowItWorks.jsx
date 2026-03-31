@@ -54,7 +54,7 @@ function HowItWorks() {
 
               {/* Video CTA */}
               <a
-                href="https://www.youtube.com/watch?v=PY8E9atq054"
+                href="https://www.youtube.com/watch?v=Bgf2EXLO_PM"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
