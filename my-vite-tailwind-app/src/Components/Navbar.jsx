@@ -99,7 +99,7 @@ function Navbar() {
               >
                 Contact
               </Link>
-              <Link to="/services#consultation">
+              <Link to="https://www.youtube.com/watch?v=Bgf2EXLO_PM">
               <button className="w-full bg-gradient-to-r from-blue-950 to-blue-800 hover:from-blue-800 hover:to-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-4">
                 Join Now
               </button>
